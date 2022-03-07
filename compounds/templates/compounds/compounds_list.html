@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<head>
+        <title>Cheminformatics Compounds</title>
+    </head>
+<header>
+    <h1><a href="/">Cheminformatics Compounds</a></h1>
+</header>
+{% for compound in compounds %}
+    <article>
+        <time>published: {{ compound.published_date }}</time>
+        <h2><a href="{% url 'compound_detail' pk=compound.pk %}">{{ compound.IUPAC_name }}</a></h2>
+        <p>{{ compound.CASRN }}</p>
+    </article>
+{% endfor %}
